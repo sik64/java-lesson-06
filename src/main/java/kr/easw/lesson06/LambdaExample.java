@@ -78,8 +78,10 @@ public class LambdaExample {
     // 각 람다는 서로 다른 이름으로 값을 수용한다는것을 잊지 마세요.
     // Function / BiFunction은 apply를, Consumer는 accept를 사용합니다.
     private static int lambdaResult(int base, int delta) {
+        printer.accept(negativeConverter.apply(delta));
 
-        throw new UnsupportedOperationException("이 코드를 지우고, 정답을 작성하세요.");
+        // 두 값을 더한 값을 반환하기 위해 BiFunction을 사용합니다.
+        return adjuster.apply(base, delta);
     }
 
 }
